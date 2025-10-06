@@ -1,6 +1,3 @@
-<?php
-// File: d:/KULIAH/PWD/pertemuan-3/latihan/table3.php
-?>
 <!DOCTYPE html>
 <html lang="id">
 
