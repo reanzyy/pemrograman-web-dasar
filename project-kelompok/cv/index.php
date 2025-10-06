@@ -2,12 +2,11 @@
 $ownerName = "Adriansyah Suryawan";
 $ownerTitle = "Full-Stack Web Developer";
 $ownerBio = "Full-Stack Web Developer dengan pengalaman membangun aplikasi web produksi: fokus pada performa, maintainability, dan UX. Terbiasa bekerja dengan PHP, JavaScript, dan arsitektur REST/API.";
-$ownerEmail = "suryawanadriansyah4@example.com"; // ganti dengan email Anda
+$ownerEmail = "suryawanadriansyah4@example.com";
 
-// tambahan konfigurasi (opsional, dipakai jika ingin memperluas tampilan)
 $location = "Cirebon, Indonesia";
 $experienceYears = 2;
-$availability = true; // true = terbuka untuk pekerjaan
+$availability = true;
 $resumeLink = "/assets/Adriansyah-Suryawan-Resume.pdf";
 
 $socials = [
@@ -62,12 +61,12 @@ $skills = [
   'Tailwind' => 80,
 ];
 
-// ---------- Contact form handling (server-side) ----------
+
 $contactSuccess = false;
 $contactError = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
   $cname = trim(strip_tags($_POST['name'] ?? ''));
-  // prevent header injection
+
   $cname = str_replace(["\r", "\n"], '', $cname);
   $cemail = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
   $cmessage = trim(strip_tags($_POST['message'] ?? ''));
@@ -79,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
     $body = "Nama: $cname\nEmail: $cemail\n\nPesan:\n$cmessage";
     $headers = "From: $cname <$cemail>\r\n";
 
-    // Catatan: fungsi mail() membutuhkan konfigurasi server yang benar.
+
     if (@mail($ownerEmail, $subject, $body, $headers)) {
       $contactSuccess = true;
     } else {
@@ -98,15 +97,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f1724;
-      --card: rgba(255, 255, 255, 0.04);
-      --glass: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --glass: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(250, 250, 250, 0.85));
       --accent1: #7c3aed;
-      /* purple */
       --accent2: #06b6d4;
-      /* cyan */
-      --muted: rgba(255, 255, 255, 0.6);
-      color-scheme: dark;
+      --muted: rgba(15, 23, 36, 0.68);
+      color-scheme: light;
     }
 
     * {
@@ -117,11 +114,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
     body {
       margin: 0;
       background:
-        radial-gradient(1200px 400px at 10% 10%, rgba(124, 58, 237, 0.12), transparent),
-        radial-gradient(800px 300px at 90% 90%, rgba(6, 182, 212, 0.08), transparent),
+        radial-gradient(1200px 400px at 10% 10%, rgba(124, 58, 237, 0.06), transparent),
+        radial-gradient(800px 300px at 90% 90%, rgba(6, 182, 212, 0.04), transparent),
         var(--bg);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      color: #e6eef8;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #0f1724;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -156,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       font-weight: 700;
       font-size: 18px;
       color: white;
-      box-shadow: 0 6px 18px rgba(12, 17, 28, 0.6)
+      box-shadow: 0 6px 18px rgba(15, 23, 36, 0.06)
     }
 
     nav a {
@@ -167,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
     }
 
     nav a:hover {
-      color: #fff
+      color: #0f1724
     }
 
     .hero {
@@ -175,12 +172,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       padding: 28px;
       border-radius: 16px;
       background: var(--glass);
-      backdrop-filter: blur(6px);
       display: grid;
       grid-template-columns: 1fr 320px;
       gap: 20px;
       align-items: center;
-      box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+      box-shadow: 0 8px 30px rgba(15, 23, 36, 0.06);
+      border: 1px solid rgba(15, 23, 36, 0.04);
     }
 
     .hero h1 {
@@ -208,7 +205,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       color: white;
       text-decoration: none;
       font-weight: 700;
-      box-shadow: 0 8px 24px rgba(6, 182, 212, 0.06);
+      box-shadow: 0 8px 20px rgba(6, 182, 212, 0.06);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
     .sec-title {
@@ -228,12 +230,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       border-radius: 12px;
       background: var(--card);
       transition: transform .28s ease, box-shadow .28s ease;
-      border: 1px solid rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(15, 23, 36, 0.04);
+      box-shadow: 0 8px 24px rgba(15, 23, 36, 0.04);
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(2, 6, 23, 0.6)
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15, 23, 36, 0.06)
     }
 
     .proj-title {
@@ -257,7 +260,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       font-size: 12px;
       padding: 6px 8px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(15, 23, 36, 0.04);
       color: var(--muted)
     }
 
@@ -277,7 +280,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
 
     .bar {
       height: 10px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(15, 23, 36, 0.06);
       border-radius: 999px;
       margin-top: 8px;
       overflow: hidden
@@ -294,7 +297,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       width: 100%;
       padding: 10px;
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(15, 23, 36, 0.06);
       background: transparent;
       color: inherit
     }
@@ -311,7 +314,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       font-size: 14px
     }
 
-    /* responsive */
     @media (max-width:880px) {
       .hero {
         grid-template-columns: 1fr
@@ -326,7 +328,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       }
     }
 
-    /* subtle animation on load */
     .fade-in {
       opacity: 0;
       transform: translateY(6px);
@@ -341,17 +342,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
     }
 
     .success {
-      background: linear-gradient(90deg, #22c55e, #16a34a);
+      background: linear-gradient(90deg, #bbf7d0, #86efac);
       padding: 10px;
       border-radius: 8px;
-      color: #021014
+      color: #064e3b
     }
 
     .error {
-      background: linear-gradient(90deg, #fb7185, #ef4444);
+      background: linear-gradient(90deg, #fecaca, #fca5a5);
       padding: 10px;
       border-radius: 8px;
-      color: #210809
+      color: #58151c
     }
   </style>
 </head>
@@ -360,7 +361,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
   <div class="wrap">
     <header class="fade-in">
       <div class="logo">
-        <div class="avatar"><?= strtoupper(substr($ownerName, 0, 1)) ?></div>
+        <div><img class="avatar" src="../assets/img/adrian.jpg"></div>
         <div>
           <div style="font-weight:700"><?= htmlspecialchars($ownerName) ?></div>
           <div style="font-size:13px;color:var(--muted)"><?= htmlspecialchars($ownerTitle) ?></div>
@@ -379,22 +380,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
         <p><?= htmlspecialchars($ownerBio) ?></p>
         <div class="cta">
           <a class="btn" href="#projects">Lihat Portofolio</a>
-          <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)" href="#contact">Hubungi Saya</a>
+          <a class="btn" style="background:transparent;border:1px solid rgba(15,23,36,0.06);color:var(--muted)" href="#contact">Hubungi Saya</a>
         </div>
 
         <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-          <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:10px">
+          <div style="background:rgba(15,23,36,0.03);padding:10px;border-radius:10px">
             <div style="font-size:12px;color:var(--muted)">Proyek Selesai</div>
             <div style="font-weight:800;font-size:16px">+5</div>
           </div>
-          <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:10px">
+          <div style="background:rgba(15,23,36,0.03);padding:10px;border-radius:10px">
             <div style="font-size:12px;color:var(--muted)">Klien</div>
             <div style="font-weight:800;font-size:16px">+5</div>
           </div>
         </div>
       </div>
 
-      <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);height:100%">
+      <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.9),transparent);height:100%">
         <div style="font-weight:700">Highlight</div>
         <div style="color:var(--muted);margin-top:8px;font-size:14px">Membangun aplikasi yang cepat, dapat diandalkan, dan mudah dikembangkan. Keahlian dalam full-stack web development.</div>
         <div style="margin-top:14px">
@@ -419,10 +420,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
             <?php foreach ($p['tags'] as $t): ?>
               <span class="tag"><?= htmlspecialchars($t) ?></span>
             <?php endforeach; ?>
-          </div>
-          <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
-            <a href="<?= htmlspecialchars($p['link']) ?>" class="btn" style="padding:8px 12px;font-size:14px">Lihat</a>
-            <a href="#" style="color:var(--muted);font-size:13px">Detail →</a>
           </div>
         </article>
       <?php endforeach; ?>
@@ -450,7 +447,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
         <div class="error"><?= htmlspecialchars($contactError) ?></div>
       <?php endif; ?>
 
-      <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);height:100%">
+      <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.9),transparent);height:100%">
         <div style="font-weight:700">Highlight</div>
         <div style="color:var(--muted);margin-top:8px;font-size:14px">Membangun aplikasi yang cepat, dapat diandalkan, dan mudah dikembangkan. Keahlian dalam full-stack web development.</div>
 
@@ -477,7 +474,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
           <div style="margin-top:15px;font-size:13px;color:var(--muted)">Sosial</div>
           <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
             <?php foreach ($socials as $name => $url): ?>
-              <a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02)">
+              <a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:8px;background:rgba(15,23,36,0.03)">
                 <?= htmlspecialchars(ucfirst($name)) ?>
               </a>
             <?php endforeach; ?>
@@ -503,7 +500,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
   </div>
 
   <script>
-    // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const id = a.getAttribute('href').slice(1);
@@ -518,9 +514,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
       });
     });
 
-    // Animate progress fills (in case of heavy styling)
+
     window.addEventListener('load', () => document.querySelectorAll('.fill').forEach(f => {
-      f.style.width = f.style.width; // trigger transition
+      f.style.width = f.style.width;
     }));
   </script>
 </body>
