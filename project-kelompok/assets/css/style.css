@@ -1,0 +1,275 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 20% 30%, #1e3c72 0%, #2a5298 60%, #0f2027 100%);
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+nav.navbar {
+  background: #0f2027;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px #00000055;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00e5ff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #00e5ff44;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: #e0f7fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #00e5ff;
+}
+
+header {
+  height: 66vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
+.left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.left h1 {
+  font-size: 3.2rem;
+  margin-bottom: 24px;
+  color: #00e5ff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #00e5ff44;
+}
+
+.left p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #e0f7fa;
+  margin-bottom: 10px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rocket {
+  width: 420px;
+  animation: fly 2.5s infinite alternate cubic-bezier(.5, .2, .7, 1.2);
+  filter: drop-shadow(0 8px 32px #00e5ff88);
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-40px);
+  }
+}
+
+section {
+  padding: 70px 20px 40px 20px;
+  text-align: center;
+  background: rgba(44, 83, 100, 0.7);
+  margin: 0 0 30px 0;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 8px 32px #203a4344;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  color: #00e5ff;
+  text-shadow: 0 2px 8px #00e5ff33;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #e0f7fa;
+}
+
+.anggota-section {
+  background: linear-gradient(120deg, #1e3c72 60%, #00e5ff22 100%);
+  box-shadow: 0 8px 32px #00e5ff33;
+  border-radius: 30px 30px 0 0;
+}
+
+.anggota {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.anggota .card {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 24px #00e5ff33;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: linear-gradient(135deg, #00e5ff22 0%, #2a5298 100%);
+  border-radius: 22px;
+  padding: 32px 18px 22px 18px;
+  width: 220px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.anggota .card:hover {
+  transform: translateY(-12px) scale(1.07) rotate(-2deg);
+  box-shadow: 0 12px 40px #00e5ff88;
+  background: linear-gradient(135deg, #00e5ff55 0%, #2a5298 100%);
+}
+
+.anggota .profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 12px #00e5ff44;
+  border: 3px solid #00e5ff55;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anggota .profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.anggota .card h3 {
+  margin: 8px 0 6px 0;
+  font-size: 1.08rem;
+  color: #ffeb3b;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 8px #ffeb3b33;
+}
+
+.anggota .card p {
+  font-size: 1rem;
+  color: #e0f7fa;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+  background: #0f2027;
+  color: #aaa;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-top: 2px solid #00e5ff22;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .rocket {
+    width: 220px;
+  }
+
+  .anggota .card {
+    width: 180px;
+    padding: 24px 10px 16px 10px;
+  }
+
+  .anggota .profile-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 60px 8px 20px 8px;
+  }
+
+  section {
+    padding: 40px 8px;
+  }
+
+  .anggota {
+    gap: 18px;
+  }
+
+  .anggota .card {
+    width: 90vw;
+    max-width: 320px;
+    padding: 18px 6px 12px 6px;
+  }
+
+  .anggota .profile-img {
+    width: 48px;
+    height: 48px;
+  }
+}
