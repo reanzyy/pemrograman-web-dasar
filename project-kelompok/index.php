@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Penerbang Rocket</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="../project-kelompok/assets/css/style.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
         </p>
       </div>
       <div class="right">
-        <img src="./assets/img/rocket.png" class="rocket" alt="rocket">
+        <img src="../project-kelompok/assets/img/rocket.png" class="rocket" alt="rocket">
       </div>
     </div>
   </header>
